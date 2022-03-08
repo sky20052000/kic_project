@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
-const config = require("../config/config.json");
+const config = require("../config.json");
 const userSchema = new mongoose.Schema({
    
     phoneN:{

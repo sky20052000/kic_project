@@ -1,5 +1,5 @@
-const config = require("./config/config.json");
-require("dotenv").config();
+require("dotenv");
+const config = require("./config.json");
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
@@ -24,7 +24,7 @@ app.use("/api/users/login", require("./routes/users"));
 app.use("/api/users/dataList", require("./routes/users"));
 app.use("/api/users/verifyOtp", require("./routes/users"));
 
-const port = config.PORT ;
+const port = process.env.PORT ||4401  ;
 app.listen(port,(req,res)=>{
     console.log(`Server is running on the :${port}`);
 })
