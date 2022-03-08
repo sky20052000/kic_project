@@ -1,5 +1,5 @@
 {
-    
+    "PORT" : "4401",
     "MONGO_URL":"mongodb+srv://kickr:lV9yc8yKkDv2iSeb@cluster0.ee76l.mongodb.net/kickrDb?retryWrites=true&w=majority",
     "JWT_SECRET":"dhkbasdkjjjjjjjjjjjjjjjjjjjjjdcdsssvds"
    
