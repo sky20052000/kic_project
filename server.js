@@ -11,13 +11,14 @@ app.use(bodyParser.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cors());
 //db connection
+
 mongoose.connect(config.MONGO_URL).then((data)=>{
     console.log("db conneted ")
 }).catch((err)=>{
     console.log("no connection");
 })
 // routes
-app.use("/users", require("./routes/users"));
+app.use("/api/users", require("./routes/users"));
 
 const port = process.env.PORT || 4401;
 app.listen(port,(req,res)=>{
