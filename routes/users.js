@@ -2,14 +2,14 @@ const express = require("express");
 const router = express.Router();
 const userController = require("../controller/userController"); 
 // profile
-router.post("/profile", userController.userProfile)
+router.post("/", userController.userProfile)
 
 // login with otp 
-router.post("/login", userController.loginUser);
+router.post("/", userController.loginUser);
 
-router.post("/verifyOtp", userController.verifyOtp);
+router.post("/", userController.verifyOtp);
 
 // getData
-router.get("/dataList",userController.dataList);
+router.get("/",userController.dataList);
 
 module.exports = router;

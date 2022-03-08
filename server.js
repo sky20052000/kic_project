@@ -1,4 +1,5 @@
 const config = require("./config/config.json");
+require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
@@ -18,9 +19,12 @@ mongoose.connect(config.MONGO_URL).then((data)=>{
     console.log("no connection");
 })
 // routes
-app.use("/api/users", require("./routes/users"));
+app.use("/api/users/profile", require("./routes/users"));
+app.use("/api/users/login", require("./routes/users"));
+app.use("/api/users/dataList", require("./routes/users"));
+app.use("/api/users/verifyOtp", require("./routes/users"));
 
-const port = process.env.PORT || 4401;
+const port = config.PORT ;
 app.listen(port,(req,res)=>{
     console.log(`Server is running on the :${port}`);
 })

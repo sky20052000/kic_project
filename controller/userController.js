@@ -8,6 +8,7 @@ const bcrypt = require("bcrypt");
 const validator = require("validator");
 const _ = require("lodash");
 const generateOTP = require("otp-generator");
+const { Console } = require("console");
 //const {Oauth2client} = require("google-auth-library");
 //const config = require("../config/config.json");
 //const client  = new Oauth2client("518670493403-8a678kn781a5epudrg4fphm04lbogmmc.apps.googleusercontent.com");
@@ -155,15 +156,19 @@ req.end();
     
     dataList:async(req,res)=>{
       try{
-        console.log(req.body);
+       
         const data = await Register.find();
+        console.log(data)
         return res.status(200).json({
             message:"success",
-            data:data
+            result:data
+        
         })
+       
       }catch(err){
           return res.status(500).json({msg:err.message}); 
       }
+      
   },
 
     // login with google
